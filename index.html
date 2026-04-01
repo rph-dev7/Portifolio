@@ -383,7 +383,7 @@ const defaultConfig = {
   font_size: 16,
   hero_title: 'Raphael Alves',
   hero_subtitle: 'Tecnologia • Análise de Dados • Gestão de Processos',
-  profile_image: 'https://via.placeholder.com/300/1a1a1a/F5C518?text=RA',
+  profile_image: './foto.jpg',
   about_text: '',
   contact_email: 'raphael.alves.lg@gmail.com',
   contact_whatsapp: '5592981254975'
@@ -420,7 +420,7 @@ function applyConfig(config) {
   }
 
   const profileImg = document.getElementById('profile-img');
-  if (profileImg) profileImg.src = c('profile_image');
+ 
 
   const emailText = document.getElementById('contact-email-text');
   const emailLink = document.getElementById('contact-email-link');
