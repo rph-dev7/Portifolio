@@ -1,119 +1,145 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="h-full">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Raphael Alves | Portfólio</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        accent: '#F5C518',
+        dark: { 900: '#0a0a0a', 800: '#111111', 700: '#1a1a1a', 600: '#222222' }
+      }
+    }
+  }
+}
+</script>
 
 <style>
-body { background:#0a0a0a; color:#d1d5db; font-family:sans-serif; }
-.nav-link:hover { color:#F5C518; }
-.card:hover { transform: translateY(-5px); border-color:#F5C518; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.anim-up { animation: fadeUp 0.7s ease both; }
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: #F5C518;
+}
+
+.nav-link::after {
+  content:'';
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#F5C518;
+  transition:width 0.3s;
+}
+
+.nav-link:hover::after {
+  width:100%;
+}
 </style>
 </head>
 
-<body>
+<body class="h-full bg-dark-900 text-gray-300">
 
-<!-- MENU -->
-<nav class="flex justify-between p-5 border-b border-gray-800">
-  <h1 class="text-white font-bold">Raphael Alves</h1>
-  <div class="space-x-6 text-gray-400">
-    <a href="#sobre" class="nav-link">Sobre</a>
-    <a href="#projetos" class="nav-link">Projetos</a>
-    <a href="#contato" class="nav-link">Contato</a>
-  </div>
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-dark-900 border-b border-gray-800 z-50">
+<div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<h1 class="text-white font-bold">
+<span class="text-accent">&lt;</span> Raphael Alves <span class="text-accent">/&gt;</span>
+</h1>
+
+<div class="hidden md:flex gap-6 text-sm">
+<a href="#sobre" class="nav-link text-gray-400 hover:text-accent">Sobre</a>
+<a href="#contato" class="nav-link text-gray-400 hover:text-accent">Contato</a>
+</div>
+
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="text-center py-20">
-  <img src="foto.jpg" class="w-40 h-40 mx-auto rounded-lg mb-6">
+<header class="pt-32 pb-20 text-center">
 
-  <h1 class="text-4xl font-bold text-white">Raphael Alves</h1>
+<div class="w-56 h-56 mx-auto rounded-2xl overflow-hidden border-2 border-accent mb-6">
+<img src="foto.jpg" alt="Raphael Alves" class="w-full h-full object-cover">
+</div>
 
-  <p class="mt-4 text-gray-400">
-    Transformo processos manuais em sistemas organizados e eficientes
-  </p>
+<h1 class="text-4xl md:text-6xl font-bold text-white anim-up">
+Raphael <span class="text-accent">Alves</span>
+</h1>
 
-  <a href="cv.pdf" class="inline-block mt-6 border border-yellow-400 text-yellow-400 px-6 py-2 hover:bg-yellow-400 hover:text-black">
-    Download CV
-  </a>
-</section>
+<p class="text-gray-400 mt-4">
+Tecnologia • Análise de Dados • Gestão de Processos
+</p>
+
+<div class="flex justify-center gap-4 mt-6">
+
+<a href="https://www.linkedin.com/in/raphael-alves-2b3380132/" target="_blank" class="border px-4 py-2 rounded hover:text-accent">
+LinkedIn
+</a>
+
+<a href="https://github.com/rph-dev7" target="_blank" class="border px-4 py-2 rounded hover:text-accent">
+GitHub
+</a>
+
+<a href="https://wa.me/5592981254975" target="_blank" class="bg-accent text-black px-4 py-2 rounded font-bold">
+WhatsApp
+</a>
+
+</div>
+
+</header>
 
 <!-- SOBRE -->
-<section id="sobre" class="px-6 py-16 max-w-4xl mx-auto">
-  <h2 class="text-2xl text-white mb-6">Sobre Mim</h2>
+<section id="sobre" class="py-20 px-6 bg-dark-800 text-center">
+<div class="max-w-3xl mx-auto">
 
-  <p class="mb-4">
-    Experiência em gestão de processos, atendimento e organização de dados, com atuação nos setores automotivo, logístico e comercial.
-  </p>
+<h2 class="text-3xl text-white font-bold mb-6">Sobre Mim</h2>
 
-  <p class="mb-4">
-    Desenvolvimento de soluções práticas como CRM em planilhas, automação de relatórios e sistemas simples voltados para eficiência operacional.
-  </p>
+<p class="text-gray-400 leading-relaxed">
+Experiência em gestão de processos, vendas, análise de dados e tecnologia.
+Atualmente focado em automação, desenvolvimento e soluções digitais.
+</p>
 
-  <p>
-    Atualmente cursando Análise e Desenvolvimento de Sistemas, com foco em tecnologia aplicada a negócios.
-  </p>
-</section>
-
-<!-- PROJETOS -->
-<section id="projetos" class="px-6 py-16 bg-[#111]">
-  <div class="max-w-5xl mx-auto">
-
-    <h2 class="text-2xl text-white mb-10">Projetos</h2>
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <div class="card border border-gray-800 p-5 transition">
-        <h3 class="text-white font-bold">CRM Express</h3>
-        <p class="text-gray-400 text-sm mt-2">
-          Sistema de gestão de clientes com funil de vendas estruturado e acompanhamento de leads e negociações.
-        </p>
-      </div>
-
-      <div class="card border border-gray-800 p-5 transition">
-        <h3 class="text-white font-bold">Monitor de Internet</h3>
-        <p class="text-gray-400 text-sm mt-2">
-          Sistema que monitora ping, latência, download e upload em tempo real com geração de logs e gráficos.
-        </p>
-      </div>
-
-      <div class="card border border-gray-800 p-5 transition">
-        <h3 class="text-white font-bold">Relatórios Automatizados</h3>
-        <p class="text-gray-400 text-sm mt-2">
-          Sistema para controle de atividades e geração automática de relatórios para tomada de decisão.
-        </p>
-      </div>
-
-      <div class="card border border-gray-800 p-5 transition">
-        <h3 class="text-white font-bold">Planilhas Inteligentes</h3>
-        <p class="text-gray-400 text-sm mt-2">
-          Automação de controle de vendas, clientes e dados com dashboards e organização eficiente.
-        </p>
-      </div>
-
-    </div>
-  </div>
+</div>
 </section>
 
 <!-- CONTATO -->
-<section id="contato" class="text-center py-16">
-  <h2 class="text-2xl text-white mb-6">Contato</h2>
+<section id="contato" class="py-20 px-6 text-center">
 
-  <p class="mb-6 text-gray-400">
-    Disponível para oportunidades na área de tecnologia e análise de dados.
-  </p>
+<h2 class="text-3xl text-white font-bold mb-6">Contato</h2>
 
-  <a href="https://wa.me/5592981254975" class="bg-yellow-400 text-black px-6 py-3 font-bold">
-    WhatsApp
-  </a>
+<p class="text-gray-400 mb-6">
+Disponível para oportunidades e projetos.
+</p>
+
+<a href="https://wa.me/5592981254975" class="bg-accent text-black px-6 py-3 rounded font-bold">
+Falar no WhatsApp
+</a>
+
 </section>
 
-<footer class="text-center py-6 text-gray-600">
-  © 2026 Raphael Alves
-</footer>
+<script>
+lucide.createIcons();
+</script>
 
 </body>
 </html>
